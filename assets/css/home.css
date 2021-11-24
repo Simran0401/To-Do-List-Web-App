@@ -1,0 +1,179 @@
+/* body style */
+body {
+    background-color: #808080;
+    color: rgb(255, 255, 255);
+    background: -webkit-linear-gradient(90deg,#262627 10%, #7a7681 90%);
+    background: -moz-linear-gradient(90deg, #262627 10%, #7a7681 90%);
+    background: -ms-linear-gradient(90deg, #262627 10%, #7a7681 90%);
+    background: -o-linear-gradient(90deg, #262627 10%, #7a7681 90%);
+    background: linear-gradient(90deg, #262627 10%, #7a7681 90%);
+    font-family: sans-serif;
+}
+
+#content{
+    width:70%;
+    background-color: -webkit-linear-gradient(90deg,#262627 10%, #7a7681 90%);
+    margin-left: 15vw;
+    height: 50vh;
+}
+/* header styling */
+header{
+    text-align: center;
+}
+.header-container {
+    background-color: rgb(182, 80, 212);
+    height: 6vh;
+}
+/* description styling */
+.description-container{
+    background-color: rgb(193, 124, 238);
+    height: 12vh;
+}
+/* category styling */
+.category-container{
+    background-color: rgb(255, 255, 255);
+    height: 12vh;
+    display: inline-block;
+    width: 33vw;
+    margin-top: 1.6vh;
+    margin-right: -3px;
+}
+.category-content{
+    height:6.5vh;
+    background-color: rgb(193, 124, 238);
+    margin-top: 3.5vh;
+}
+/* date styling */
+.date-container{
+    background-color: rgb(255, 255, 255);
+    height: 12vh;
+    display: inline-block;
+    width: 36vw;
+}
+.date-content{
+    height:6.5vh;
+    background-color: rgb(193, 124, 238);
+    margin-top: 3.5vh;
+}
+
+.date-content h3{
+    margin-top: 3vh;
+}
+
+/* input styling specifically for input tag */
+.input{
+    margin-top: -3vh;
+}
+/* todo-list styling */
+#todo-list-container{
+    background-color: rgb(130, 42, 165);
+    height: auto;
+    width: 100%;
+}
+
+#todo-list-container ul
+{
+    padding: 0;
+}
+.todo{
+    background-color:rgb(158, 135, 222);
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details{
+    background-color: #fffde7;
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin-top: 2.5vh;
+    margin-left: 0.1vw;
+    padding-left: 5px;
+}
+
+.details p{
+    display:flex;
+    list-style: square;
+}
+
+.DESCRIPTION-CONTAINER{
+    display:flex;
+    height: auto;
+    width:100%;
+    background-color:#fffde7;
+    color:gray;
+    flex-direction: column;
+}
+.CATEGORY-CONTAINER{
+    display:flex;
+    background-color: rgb(80, 106, 255);
+    height: 10vh;
+    width:15%;
+    
+}
+.CATEGORY-CONTAINER {
+    display: flex;
+    background-color: #a671e4;
+    height: 6vh;
+    width: 15%;
+    margin-top: 3vh;
+    margin-right: 1vw;
+    border-radius: 6%;
+    /* align-content: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.CATEGORY-CONTAINER>div {
+    background-color:  #a671e4;
+    width: 50%;
+    height: 30%;
+    margin-left: 1.7vw;
+    /* align-content: center; */
+    /* margin-right: auto; */
+    margin-top: 1.7vh;
+    margin-right: auto;
+    margin-bottom: auto;
+    color: white;
+}
+
+.DATE-CONTAINER{
+    display:flex;
+    flex-direction:row;
+    height: 35%;
+    width:10vw;
+    background-color:#fffde7;
+    /* flex-wrap: wrap; */
+    margin-left: 0.1vw;
+    margin-top: 0vh;
+}
+
+
+/* delete-button styling*/
+.details .delete-button{
+    width:20%;
+    text-align: center;
+    display: flex;
+}
+
+.button{
+    margin-left: 16vw;
+}
+
+.button button {
+    background-color: #c7abec;
+    /* size: a4; */
+    border-style: none;
+    height: 10vh;
+    width: 16vw;
+    margin-top: 5vh;
+    margin-left: 2vh;
+}
+
+button:hover{
+    background-color: rgb(230, 210, 238);
+    
+}
+
+

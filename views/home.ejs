@@ -1,0 +1,145 @@
+<!-- ejs file for what we see on the browser (view) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!-- font-awesome link for using font-awesome icon in the project -->
+    <script src="https://kit.fontawesome.com/514d9df4a5.js" crossorigin="anonymous"></script>
+    <!-- The "meta" is info in the head. charset = character set utf-8 is character encoding capable of encoding all characters on the web. 
+        It replaced ascii as the default character encoding. 
+        Because it is the default all modern browsers will use utf-8 without being explicitly told to do so
+     -->
+    <meta charset="UTF-8">
+    <!--  This means that the browser will (probably) render the width of the page at the width of its own screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title as acc to the chages for that we use locals -->
+    <title>
+        <%= locals.title %>
+    </title>
+    <!-- linking the static css file in assets folder -->
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+  </head>
+    <body>
+        <main id="content">
+        <header>
+           <div class="header-container">
+               <h1>TO-DO APP</h1>
+           </div>  
+        </header>
+
+        
+        </div>
+        <div>
+            <!-- using the post method  -->
+        <form action="/create-task" method="POST">
+            <!-- <input type="text"  name="description" placeholder="what do you need to do" required>
+            <input type="text"  name="category" placeholder="choose a category" required>
+            <input type="date"  name="date" placeholder="dd-mm-yyyy" required> 
+
+            <button type="submit"> Add task</button> -->
+            <!-- styling for DESCRIPTION using html and css  -->
+            <div class="description-container">
+                <div class="description-heading">
+                    <h3 style="cursor: pointer;">DESCRIPTION</h3>
+                </div>
+                <div class="description-content">
+                    <!-- input tag for getting the input from user -->
+                    <input type="text"  name="description" placeholder="What do you need to do?" required style="
+                    height: 6vh;
+                    width: 99.1%;
+                    margin-top: -10vh;">
+                </div>
+            </div>
+            <!-- styling for CATEGORY using html and css  -->
+            <div class="category-container">
+                <div class="category-content">
+                    <h3 style="cursor: pointer;">CATEGORY</h3>
+                     <div class="input">
+                         <!-- select for getting the option list -->
+                        <select name="category" required style="
+                        width: 33vw;
+                        height: 4.5vh;">
+                        <!-- options that we want on the list -->
+                            <option value="" disabled selected>Choose your category</option>
+                            <option value="school">School</option>
+                            <option value="personal">Personal</option>
+                            <option value="home">Home</option>
+                            <option value="work">Work</option>
+                            <option value="other">Other</option> 
+                        </select>
+                    </div>
+                </div>
+            </div>
+             <!-- styling for DATE using html and css -->
+            <div class="date-container">
+                <div class="date-content">
+                    <h3 style="cursor: pointer;">DUE-DATE</h3>
+                     <div class="input">
+                    <input type="date"  name="date" placeholder="dd-mm-yyyy" required style="
+                    border-style: none;
+                    width: 36vw;
+                    height: 4.5vh;
+                    "> 
+                </div>
+                </div>
+            </div>
+            <!-- button for submit the task and deleting the task which is selected in checkbox -->
+          <div class="button"> 
+            <button type="submit" style="cursor: pointer;"> 
+                <i class="fas fa-plus-circle"></i>
+                Add task</button>
+                <button type="submit" form="delete-form" style="cursor: pointer;"> 
+                    <i  class="fas fa-trash-alt"></i>
+                    Delete</button>    
+                </div>
+                
+
+        </form>
+    </div>
+            
+<!--  for deleting the tasks which is selected in checkbox list and we can delete multiple tasks using this(using id="delete-form")  -->
+    <form action="/delete-task" method="POST" id="delete-form" name="delete-task" >
+        <div id="todo-list-container">
+            <ul>
+                <% for(let i of todo_List) { %>
+                   <li class="todo" style="list-style: none;">
+                      <!-- checkbox list  -->
+                      <input type="checkbox" name="<%= i.id %>" style="cursor: pointer; margin-top: 3vh;"  >
+
+                      <div class="details">
+                           <!-- for getting the input which is added by the user and print it in the checkbox list -->
+                           <div class="DESCRIPTION-CONTAINER">
+                               <p><%= i.description %></p>
+                              
+                             <!-- <div class="DATE-CONTAINER"> -->
+                                 
+                                <p class="DATE-CONTAINER"> 
+                                   
+                                    <i class="far fa-calendar-alt" style="margin-right: 0.2vw;"></i>
+                                    <%=  i.date %>   
+                                </p>
+                             <!-- </div> -->
+                           </div>
+
+                            <div class="CATEGORY-CONTAINER">
+                                <div>
+                                    <div><%= i.category %></div>
+                                </div>    
+                            </div>        
+                            
+                      </div> 
+                            
+                    </li>
+
+                <%  } %>
+            </ul>
+        </div>
+    </form>
+        
+
+           
+           </main> 
+        <script type="text/javascript"  src="/js/home.js"></script>
+    </body>
+</html>

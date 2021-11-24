@@ -1,0 +1,3 @@
+
+# folders which we want to ignored by github
+node_modules/
